@@ -26,6 +26,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use figaro to manage environment variables
 gem 'figaro'
 
+# For pictures upload to Amazon S3
+gem 'aws-sdk', '< 2.0'
+gem 'paperclip'
+
 # Front end setup
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'font-awesome-sass', '~> 4.2.0'
