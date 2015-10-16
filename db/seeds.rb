@@ -1,4 +1,3 @@
-Ingredient.destroy_all
 
 
 Ingredient.create(name: "rhum")
@@ -11,3 +10,4 @@ Ingredient.create(name: "coca cola")
 Ingredient.create(name: "red bull")
 Ingredient.create(name: "soda")
 Ingredient.create(name: "ice")
+Ingredient.create(name: "whip cream")

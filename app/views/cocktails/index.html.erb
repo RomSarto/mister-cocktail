@@ -8,17 +8,7 @@
   <div class="row">
 
     <% @cocktails.each do |cocktail| %>
-      <div class="col-xs-12 col-md-4 text-center">
-        <div class="card" style="background-image: url('https://unsplash.it/1000/400?image=1');" data-sr>
-          <div class="card-shadow">
-            <div class="card-text">
-              <%= link_to cocktail_path(cocktail) do %>
-              <h5><%= cocktail.name%></h5>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      </div>
+      <%= render "cocktail", cocktail: cocktail %>
     <% end %>
   </div>
 

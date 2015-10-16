@@ -1,22 +1,27 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-8 col-md-offset-2 text-center">
-      <h1><%= @cocktail.name %></h1>
-      <%= image_tag @cocktail.picture.url(:medium) %>
-    </div>
-    <div class="col-xs-12 col-md-8 col-md-offset-2 text-center">
-      <%= link_to new_cocktail_dose_path(@cocktail), {class: "btn btn-primary"} do %>
-        <h5>Add new dose to improve <%= @cocktail.name %> recipe</h5>
+<div class="banner text-center" style="background-image:url(<%= @cocktail.picture.url(:medium) %>)">
+  <div class="banner-gradient"></div>
+  <div class="banner-content">
+    <h1><%= @cocktail.name %></h1>
+    <%= link_to new_cocktail_dose_path(@cocktail), {class: "btn btn-primary"} do %>
+        <h5>Add new dose to <%= @cocktail.name %></h5>
       <% end %>
-    </div>
   </div>
+</div>
+
+
+<div class="container">
     <div class="row">
-    <div class="col-xs-12 col-md-8 col-md-offset-2 text-center">
       <% @cocktail.doses.each do |dose|%>
-        <p><%= dose.description %> <%= dose.ingredient.name %></p>
-        <%= link_to dose_path(dose) do %>
-        <p>delete this dose</p>
-      <% end %>
+        <div class="col-xs-6 text-center">
+          <p>
+            <%= dose.description %> <%= dose.ingredient.name %>
+          </p>
+        </div>
+        <div class="col-xs-6 text-center">
+          <%= link_to dose_path(dose) do %>
+            <p>delete this dose</p>
+          <% end %>
+        </div>
       <% end %>
     </div>
   </div>
